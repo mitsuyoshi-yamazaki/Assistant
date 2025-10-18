@@ -1,0 +1,9 @@
+{
+  "name": "temporal-workflows",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:mitsuyoshi-yamazaki/TemporalWorkflows.git",
+  "author": "Yamazaki Mitsuyoshi <mitsuyoshi.tsukuba@gmail.com>",
+  "license": "MIT",
+  "private": false
+}
