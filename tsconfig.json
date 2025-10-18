@@ -42,7 +42,6 @@
     "moduleDetection": "force",
     "skipLibCheck": true,
 
-
     /* Type Check */
     "strict": true /* Enable all strict type-checking options. */,
     "noImplicitAny": true /* Enable error reporting for expressions and declarations with an implied 'any' type. */,

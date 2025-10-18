@@ -1,8 +1,7 @@
-import globals from "globals";
+import globals from "globals"
 import js from "@eslint/js"
 import tseslint from "@typescript-eslint/eslint-plugin"
 import tsparser from "@typescript-eslint/parser"
-
 
 const sharedRules = {
   // Custom rules
@@ -65,7 +64,6 @@ const eslintConfig = [
       js,
       "@typescript-eslint": tseslint,
     },
-    extends: ["js/recommended"],
     rules: {
       // TypeScript strict rules
       ...tseslint.configs.strict.rules,
@@ -117,7 +115,6 @@ const eslintConfig = [
       js,
       "@typescript-eslint": tseslint,
     },
-    extends: ["js/recommended"],
     rules: {
       ...sharedRules,
     },
