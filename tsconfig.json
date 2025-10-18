@@ -5,14 +5,17 @@
     // "rootDir": "./src",
     // "outDir": "./dist",
 
+    "lib": ["es2023"],
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node16",
+
     "rootDir": "./src",
     "outDir": "./lib",
 
-
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
-    "module": "nodenext",
-    "target": "esnext",
+    "module": "node16",
+    "target": "es2022",
     "types": [],
     // For nodejs:
     // "lib": ["esnext"],
@@ -62,5 +65,7 @@
     "noPropertyAccessFromIndexSignature": true /* Enforces using indexed accessors for keys declared using an indexed type. */,
     "allowUnusedLabels": false /* Disable error reporting for unused labels. */,
     "allowUnreachableCode": false /* Disable error reporting for unreachable code. */
-  }
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["eslint.config.mts"]
 }
