@@ -58,7 +58,7 @@ const eslintConfig = [
       parserOptions: {
         project: "./tsconfig.json",
       },
-      globals: globals.browser,
+      globals: globals.node,
     },
     plugins: {
       js,
@@ -109,7 +109,7 @@ const eslintConfig = [
       parserOptions: {
         project: "./tsconfig.json",
       },
-      globals: globals.browser,
+      globals: globals.node,
     },
     plugins: {
       js,
