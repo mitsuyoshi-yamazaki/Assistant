@@ -1,5 +1,5 @@
 import { Connection, WorkflowClient } from "@temporalio/client"
-import { namespace, taskQueueNames } from "../settings"
+import { namespace, taskQueueNames } from "../env"
 import { sampleWorkflow } from "../workflow/sample-workflow"
 
 async function run() {

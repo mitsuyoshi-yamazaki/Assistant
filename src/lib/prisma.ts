@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client"
-import { databaseUrl } from "../settings"
+import { databaseUrl, environment } from "../env"
 
 /**
  * Prisma Clientのシングルトンインスタンス
@@ -23,6 +23,6 @@ const globalForPrisma = global as typeof global & {
 
 export const prisma = globalForPrisma.prisma ?? createPrismaClient()
 
-if (process.env["NODE_ENV"] !== "production") {
+if (environment !== "production") {
   globalForPrisma.prisma = prisma
 }

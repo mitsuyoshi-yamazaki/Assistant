@@ -10,10 +10,10 @@
 
 ## 環境構成
 
-| 環境 | データベース名 | 説明 |
-|------|---------------|------|
-| development | assistant_dev | 開発環境用DB |
-| production | assistant_prod | 本番環境用DB (Raspberry Pi上で実行) |
+| 環境        | データベース名 | 説明                                |
+| ----------- | -------------- | ----------------------------------- |
+| development | assistant_dev  | 開発環境用DB                        |
+| production  | assistant_prod | 本番環境用DB (Raspberry Pi上で実行) |
 
 ## セットアップ手順
 
@@ -29,7 +29,7 @@ cp .env.example .env
 
 ```env
 # Environment
-NODE_ENV=development
+ENVIRONMENT=development
 
 # PostgreSQL Configuration
 POSTGRES_USER=assistant
@@ -44,7 +44,7 @@ DATABASE_URL=postgresql://assistant:assistant_password@localhost:5432/assistant_
 **本番環境での設定:**
 
 ```env
-NODE_ENV=production
+ENVIRONMENT=production
 POSTGRES_DB=assistant_prod
 DATABASE_URL=postgresql://assistant:assistant_password@localhost:5432/assistant_prod?schema=public
 ```
