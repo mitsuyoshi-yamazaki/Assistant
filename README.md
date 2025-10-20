@@ -21,7 +21,7 @@
 - サーバー:
   - Temporal Serverは常時起動しているRaspberry Pi OS上で、Temporalが提供するDockerにて実行する。（ https://docs.temporal.io/self-hosted-guide/deployment ）
     - Raspberry Piのスペックは十分なものであるという想定で良い
-  - DBはMySQLを用いる
+  - DBはデフォルトのものを用いる
 - クライアント（タスク状態の確認）:
   - [Temporal Web UI](https://docs.temporal.io/web-ui) を利用する
 - クライアント（タスクの実行）：
@@ -41,11 +41,7 @@
 
 ## 実行
 
-### サーバー
-
-```sh
-$ temporal operator namespace create --namespace <namespace>
-```
+- Temporalサーバーの実行方法に関しては [server.md](docs/temporal/server.md) を参照
 
 ###
 
