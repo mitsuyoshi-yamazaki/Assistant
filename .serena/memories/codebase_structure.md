@@ -30,5 +30,6 @@ README.md              # プロジェクトREADME
 ```
 
 ## 設計原則
+
 - 機能ごとにworkflow/配下にサブディレクトリを作成し、実装と要件（README.md）を格納
 - activities.ts と workflows.ts で全実装をエクスポートし、Workerで登録

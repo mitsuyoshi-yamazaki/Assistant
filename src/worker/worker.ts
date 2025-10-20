@@ -1,6 +1,6 @@
 import { Worker } from "@temporalio/worker"
 import * as activities from "../activity/activities"
-import { namespace, taskQueueNames } from "../settings"
+import { namespace, taskQueueNames } from "../env"
 
 async function run() {
   // Register Workflows and Activities with the Worker and connect to

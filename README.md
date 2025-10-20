@@ -41,14 +41,42 @@
 
 ## 実行
 
-- Temporalサーバーの実行方法に関しては [server.md](docs/temporal/server.md) を参照
+### 環境構築
 
-###
+#### 1. パッケージのインストール
 
 ```sh
-# インストール
-$ yarn install
+yarn install
+```
+
+#### 2. データベースのセットアップ
+
+ビジネスデータ永続化用のPostgreSQLデータベースをセットアップします。
+
+```sh
+# 環境変数の設定
+cp .env.example .env
+# 必要に応じて .env ファイルを編集
+
+# PostgreSQLコンテナの起動
+docker compose up -d
+
+# Prisma Clientの生成
+yarn prisma:generate
+```
+
+詳細な手順は [docs/database/setup.md](docs/database/setup.md) を参照してください。
+
+#### 3. Temporal Serverの起動
+
+Temporal Serverの実行方法に関しては [server.md](docs/temporal/server.md) を参照してください。
+
+### アプリケーションの実行
+
+```sh
+# Workerの実行
+yarn worker
 
 # Temporalクライアントの実行
-$ yarn ts-node src/client/<client filename>
+yarn ts-node src/client/<client filename>
 ```
