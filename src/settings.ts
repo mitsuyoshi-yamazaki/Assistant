@@ -18,3 +18,11 @@ export const namespace = environment
 export const taskQueueNames = {
   default: "default",
 }
+
+export const databaseUrl: string = ((): string => {
+  const value = process.env["DATABASE_URL"]
+  if (value == null) {
+    throw new Error("DATABASE_URL environment variable is not set")
+  }
+  return value
+})()
