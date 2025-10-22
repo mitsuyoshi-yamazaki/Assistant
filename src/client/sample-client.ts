@@ -1,9 +1,13 @@
-import { Connection, WorkflowClient } from "@temporalio/client"
-import { namespace, taskQueueNames } from "../env"
+import { Connection, ConnectionOptions, WorkflowClient } from "@temporalio/client"
+import { namespace, taskQueueNames, temporalServerAddress } from "../env"
 import { sampleWorkflow } from "../workflow/sample-workflow"
 
 async function run() {
-  const connection = await Connection.connect()
+  const connectionOptions: ConnectionOptions = {}
+  if (temporalServerAddress != null) {
+    connectionOptions.address = temporalServerAddress
+  }
+  const connection = await Connection.connect(connectionOptions)
   const client = new WorkflowClient({ connection, namespace })
 
   console.log(`Starting sample workflow`)
