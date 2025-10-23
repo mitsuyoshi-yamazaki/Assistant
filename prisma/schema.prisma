@@ -10,5 +10,12 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// 初期スキーマは空
-// 必要に応じてモデルを追加してください
+// Read It Later機能のデータモデル
+model ReadItLaterItem {
+  id          String   @id @default(uuid())
+  url         String
+  description String?
+  category    String   // "youtube" | "other" (将来拡張可能)
+  tags        String[] // タグ配列
+  createdAt   DateTime @default(now())
+}

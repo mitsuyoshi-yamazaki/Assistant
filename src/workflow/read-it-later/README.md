@@ -13,8 +13,31 @@
 
 ## Workflow仕様
 
-- TBD
+### addReadItLater
+
+Read It Later項目を追加するWorkflow
+
+#### 入力パラメータ
+
+```typescript
+{
+  url: string           // 追加するURL（必須）
+  description?: string  // URLの説明（任意）
+  tags?: string[]       // タグ配列（任意）
+}
+```
+
+#### 処理フロー
+
+1. URLからカテゴリを判定
+   - `youtube.com` または `youtu.be` を含む場合: `"youtube"`
+   - それ以外: `"other"`
+2. データベースに保存（Activity: `saveReadItLaterItem`）
+
+#### 返り値
+
+- 作成されたアイテムのID（string）
 
 ### 使用Activity
 
-- TBD
+- `saveReadItLaterItem`: Read It Later項目をデータベースに保存する
