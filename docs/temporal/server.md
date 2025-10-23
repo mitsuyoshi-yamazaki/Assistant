@@ -8,8 +8,8 @@
 # 開発サーバー
 # https://learn.temporal.io/getting_started/typescript/dev_environment/
 
-# DBファイル名付きで起動
-$ temporal server start-dev --db-filename <db filename>
+# DBファイル名付き, IP指定で起動（0.0.0.0ならローカルネットワーク経由のアクセスが可能）
+$ temporal server start-dev --db-filename <DB filename> --ip <IP>
 
 # namespaceの追加
 $ temporal operator namespace create --namespace <namespace>
