@@ -5,7 +5,12 @@
 ## よく利用する操作
 
 ```sh
+# 開発サーバー
+# https://learn.temporal.io/getting_started/typescript/dev_environment/
+
+# DBファイル名付きで起動
+$ temporal server start-dev --db-filename <db filename>
+
 # namespaceの追加
-# TODO: Docker実行でも同じ操作で行えるか確認する
 $ temporal operator namespace create --namespace <namespace>
 ```
