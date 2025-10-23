@@ -7,8 +7,6 @@ import { databaseUrl, environment } from "../env"
  * Activityから利用する際は、このインスタンスをimportして使用する
  */
 const createPrismaClient = (): PrismaClient => {
-  // PrismaClientのコンストラクタは型定義上anyを含むため、eslint-disableが必要
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   return new PrismaClient({
     datasources: {
       db: {
@@ -25,12 +23,8 @@ type GlobalWithPrisma = typeof global & {
 
 const globalForPrisma = global as GlobalWithPrisma
 
-// グローバル変数からの取得はanyを含むため、eslint-disableが必要
-// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 export const prisma: PrismaClient = globalForPrisma.prisma ?? createPrismaClient()
 
 if (environment !== "production") {
-  // グローバル変数への代入はanyを含むため、eslint-disableが必要
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   globalForPrisma.prisma = prisma
 }
