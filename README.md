@@ -74,9 +74,13 @@ Temporal Serverの実行方法に関しては [server.md](docs/temporal/server.m
 ### アプリケーションの実行
 
 ```sh
+# Temporalサーバーの接続先は.envのTEMPORAL_SERVER_ADDRESSにて指定
+
 # Workerの実行
-yarn worker
+$ yarn worker
 
 # Temporalクライアントの実行
-yarn ts-node src/client/<client filename>
+$ yarn ts-node src/client/<client filename>
+# or
+$ yarn client <workflow名> <引数>
 ```
