@@ -1,6 +1,6 @@
 import { Connection, ConnectionOptions, WorkflowClient } from "@temporalio/client"
 import { namespace, taskQueueNames, temporalServerAddress } from "../env"
-import { WorkflowName } from "./workflow-definition"
+import { WorkflowName } from "./workflow-name"
 
 async function run() {
   const connectionOptions: ConnectionOptions = {}
