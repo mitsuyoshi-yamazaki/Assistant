@@ -1,5 +1,6 @@
 import { Connection, ConnectionOptions, WorkflowClient } from "@temporalio/client"
 import { namespace, taskQueueNames, temporalServerAddress } from "../env"
+import { WorkflowName } from "./workflow-definition"
 
 async function run() {
   const connectionOptions: ConnectionOptions = {}
@@ -11,7 +12,8 @@ async function run() {
 
   console.log(`Starting sample workflow`)
 
-  const handle = await client.start("sampleWorkflow", {
+  const workflowName: WorkflowName = "sampleWorkflow"
+  const handle = await client.start(workflowName, {
     args: ["aaa"],
     taskQueue: taskQueueNames.default,
     workflowId: `${Date.now()}`,
