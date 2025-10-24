@@ -13,4 +13,7 @@ $ temporal server start-dev --db-filename <DB filename> --ip <IP>
 
 # namespaceの追加
 $ temporal operator namespace create --namespace <namespace>
+
+# Custom Search Attributeの追加
+$ temporal operator search-attribute create --namespace <namespace> --name <attribute name> --type Int
 ```
