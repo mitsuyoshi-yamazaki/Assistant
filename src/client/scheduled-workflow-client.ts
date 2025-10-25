@@ -6,12 +6,8 @@ const run = async (): Promise<void> => {
   // コマンドライン引数の取得
   const args = process.argv.slice(2)
   if (args.length !== 2) {
-    console.error(
-      "Usage: yarn client:scheduled <workflowName> <cronSchedule>"
-    )
-    console.error(
-      'Example: yarn client:scheduled scheduledWorkflow "*/1 * * * *"'
-    )
+    console.error("Usage: yarn client:scheduled <workflowName> <cronSchedule>")
+    console.error('Example: yarn client:scheduled scheduledWorkflow "*/1 * * * *"')
     process.exit(1)
   }
 

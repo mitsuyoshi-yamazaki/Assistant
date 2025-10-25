@@ -6,7 +6,9 @@ const run = async (): Promise<void> => {
   const args = process.argv.slice(2)
   if (args.length !== 1) {
     console.error("Usage: yarn ts-node src/client/termination-client.ts <workflowId>")
-    console.error("Example: yarn ts-node src/client/termination-client.ts scheduledWorkflow-cron-1234567890")
+    console.error(
+      "Example: yarn ts-node src/client/termination-client.ts scheduledWorkflow-cron-1234567890"
+    )
     process.exit(1)
   }
 
