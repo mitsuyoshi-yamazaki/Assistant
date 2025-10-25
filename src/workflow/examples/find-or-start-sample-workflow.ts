@@ -1,5 +1,5 @@
 import { proxyActivities } from "@temporalio/workflow"
-import type * as activities from "../activity/activities"
+import type * as activities from "../../activity/activities"
 
 const { findSampleWorkflowByArgument, startSampleWorkflow } = proxyActivities<typeof activities>({
   startToCloseTimeout: "1 minute",
