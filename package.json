@@ -15,6 +15,7 @@
     "worker": "ts-node src/worker/worker.ts",
     "worker.watch": "nodemon src/worker.ts",
     "client": "ts-node src/client/single-workflow-client.ts",
+    "client:scheduled": "ts-node src/client/scheduled-workflow-client.ts",
     "prisma:generate": "prisma generate",
     "prisma:migrate:dev": "prisma migrate dev",
     "prisma:migrate:deploy": "prisma migrate deploy",
