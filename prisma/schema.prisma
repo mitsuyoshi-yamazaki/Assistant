@@ -19,3 +19,58 @@ model ReadItLaterItem {
   tags        String[] // タグ配列
   createdAt   DateTime @default(now())
 }
+
+// ユーザー管理のデータモデル
+enum AttributeType {
+  STRING
+  NUMBER
+  URL
+  OTHER
+}
+
+model User {
+  id              String           @id @default(uuid())
+  name            String           @unique
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  userAttributes  UserAttribute[]
+  ownedProjects   Project[]
+}
+
+model UserAttribute {
+  userId          String
+  attributeName   String
+  attributeType   AttributeType
+  attributeContent String          @db.Text
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  user            User             @relation(fields: [userId], references: [id], onDelete: Restrict)
+
+  @@id([userId, attributeName])
+}
+
+model Project {
+  id                Int                 @id @default(autoincrement())
+  ownerId           String
+  name              String
+  description       String
+  instructions      String?
+  createdAt         DateTime            @default(now())
+  updatedAt         DateTime            @updatedAt
+  owner             User                @relation(fields: [ownerId], references: [id], onDelete: Restrict)
+  projectAttributes ProjectAttribute[]
+
+  @@unique([ownerId, name])
+}
+
+model ProjectAttribute {
+  projectId       Int
+  attributeName   String
+  attributeType   AttributeType
+  attributeContent String          @db.Text
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  project         Project          @relation(fields: [projectId], references: [id], onDelete: Restrict)
+
+  @@id([projectId, attributeName])
+}
